@@ -4,6 +4,14 @@
     <PackageId>Neo.Plugins.Storage.LevelDBStore</PackageId>
     <RootNamespace>Neo.Plugins.Storage</RootNamespace>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\neo\src\neo\neo.csproj" />
+  </ItemGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <OutputPath>..\..\..\neo-cli\neo-cli\bin\Debug\net5.0\Plugins\</OutputPath>
+  </PropertyGroup>
 </Project>
