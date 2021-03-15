@@ -3,7 +3,13 @@
   <PropertyGroup>
     <PackageId>Neo.Plugins.RpcServer</PackageId>
     <RootNamespace>Neo.Plugins</RootNamespace>
+    <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+
   </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\neo\src\neo\neo.csproj" />
+  </ItemGroup>
 
   <ItemGroup>
     <None Update="RpcServer\config.json">
@@ -11,5 +17,9 @@
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
     </None>
   </ItemGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <OutputPath>..\..\..\neo-cli\neo-cli\bin\Debug\net5.0\Plugins\</OutputPath>
+  </PropertyGroup>
   
 </Project>
